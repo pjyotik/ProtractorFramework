@@ -105,7 +105,7 @@ exports.config = {
                 screenshotsOnlyOnFailure: true,
                 testPlatform: platform
             };
-            new HTMLReport().from("target/Jasmine-Test-Results/screenshots/xmlresults.xml", testConfig);
+            new HTMLReport().from("target/Jasmine-Test-Results/xmlresults.xml", testConfig);
         });
     }
 
