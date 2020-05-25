@@ -1,7 +1,7 @@
 var HtmlScreenshotReporter = require('protractor-jasmine2-screenshot-reporter');
 var reporter = new HtmlScreenshotReporter({
-    dest: 'target/screenshots',
-    filename: 'my-report.html'
+    dest: 'target/Screenshots',
+    filename: 'Test-Report.html',
 });
 
 
@@ -40,10 +40,11 @@ exports.config = {
     // Assign the test reporter to each running instance
     onPrepare: function() {
 
+        //obtain results in xml file
         var jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
             consolidateAll: true,
-            savePath: './',
+            savePath: 'target/Test-Reports/jasmine-results',
             filePrefix: 'xmlresults'
         }));
 
@@ -67,9 +68,10 @@ exports.config = {
 
         jasmine.getEnv().addReporter(reporter);
 
+        // Allure reports settings
         var AllureReporter = require('jasmine-allure-reporter');
         jasmine.getEnv().addReporter(new AllureReporter({
-            resultsDir: 'allure-results'
+            resultsDir: 'target/Test-Reports/allure-results'
         }));
     },
 
@@ -94,7 +96,7 @@ exports.config = {
 
             testConfig = {
                 reportTitle: 'Protractor Test Execution Report',
-                outputPath: './',
+                outputPath: 'target/Test-Reports/jasmine-results',
                 outputFilename: 'ProtractorTestReport',
                 screenshotPath: './screenshots',
                 testBrowser: browserName,
@@ -103,7 +105,7 @@ exports.config = {
                 screenshotsOnlyOnFailure: true,
                 testPlatform: platform
             };
-            new HTMLReport().from('xmlresults.xml', testConfig);
+            new HTMLReport().from('target/Test-Reports/jasmine-results/xmlresults.xml', testConfig);
         });
     }
 
