@@ -1,5 +1,10 @@
 # ProtractorFrameworkDemo
 
+## Official Understanding document
+ 	https://www.protractortest.org/#/
+	https://www.protractortest.org/#/api
+
+
 ## Installation Guide
 
 1. Install nvm (Node version Manager) for Windows
@@ -13,36 +18,23 @@
 	$ npm install -g protractor
 	$ protractor --version
 
-4. Webdriver Manager (start selenium server)
-	$ webdriver-manager update
+- Create a project directory
+	mkdir testProject
+	cd testProject
 
-	// cmd to manually start webdriver manager
-	$ webdriver-manager start
-	http://localhost:4444/
-
-5. Run and Test example file
-	$ cd C:\Users\prano\AppData\Roaming\nvm\v12.16.3\node_modules\protractor\example
-	$ protractor conf.js
-
-6. Open VSCode and install JavaScript & TypeScript plugins
-
-
-
-==> run npm init to create package.json
-==> add the dependencies and run npm install
-
-
-
-
-
-
-Official Understanding document
-
- 	https://www.protractortest.org/#/
-
-	https://www.protractortest.org/#/api
+	// create package.json
+    npm init 			
 	
+	//add the dependencies to the package.json file and run 
+	npm install
 
+	###FolderStructure
+
+	-conf  (configuration file)
+	-pages (Page objects)
+	-specs (test cases)
+
+	
 ### Protractor Locators
 
 1. Angular Specific locators
