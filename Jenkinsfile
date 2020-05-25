@@ -5,14 +5,13 @@ node{
         workspace = pwd()
         
     }
-    stage('static code analysis'){
-        echo "static code analysis"
-    }
     stage('Build'){
         echo "Build the code"
+        call npm install
     }
     stage('Testing'){
-        echo "Testing the code"
+        echo "Running Test"
+        protractor conf\conf.js
     }
     stage('Delivery'){
         echo "Delivery"
