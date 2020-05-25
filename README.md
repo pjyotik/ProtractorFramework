@@ -1,6 +1,6 @@
-# ProtractorFramework
+# ProtractorFrameworkDemo
 
-# Installation Guide
+## Installation Guide
 
 1. Install nvm (Node version Manager) for Windows
 	https://github.com/coreybutler/nvm-windows/releases
