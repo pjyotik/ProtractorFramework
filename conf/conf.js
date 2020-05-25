@@ -23,7 +23,15 @@ exports.config = {
         }
     },
     framework: 'jasmine',
-    specs: ['..//specs//testcase1.js'],
+    //specs: ['..//specs//sampleTest.js', '..//specs//testcase1.js'],
+    suites: {
+        //Suite name and location give * to run all the specs or provide the name 
+        smoke: ['..//specs//sampleTest.js'],
+        endtoend: ['..//specs//testcase1.js'],
+        //Futhermore you can select few test specs
+        //testfew: ['./smoke/editorder.spec.js', './smoke/cancelorder.spec.js']
+
+    },
 
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
