@@ -16,7 +16,11 @@ exports.config = {
     // }],
 
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+
+        chromeOptions: {
+            args: ["--headless"]
+        }
     },
     framework: 'jasmine',
     specs: ['..//specs//testcase1.js'],
