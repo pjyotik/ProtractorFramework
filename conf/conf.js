@@ -44,7 +44,7 @@ exports.config = {
         var jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
             consolidateAll: true,
-            savePath: 'target/Test-Reports/jasmine-results',
+            savePath: 'target/Jasmine-Test-Results',
             filePrefix: 'xmlresults'
         }));
 
@@ -71,7 +71,7 @@ exports.config = {
         // Allure reports settings
         var AllureReporter = require('jasmine-allure-reporter');
         jasmine.getEnv().addReporter(new AllureReporter({
-            resultsDir: 'target/Test-Reports/allure-results'
+            resultsDir: 'target/Allure-Test-Results'
         }));
     },
 
@@ -96,16 +96,16 @@ exports.config = {
 
             testConfig = {
                 reportTitle: 'Protractor Test Execution Report',
-                outputPath: 'target/Test-Reports/jasmine-results',
+                outputPath: 'target/Jasmine-Test-Results',
                 outputFilename: 'ProtractorTestReport',
-                screenshotPath: './screenshots',
+                screenshotPath: 'target/Jasmine-Test-Results/screenshots',
                 testBrowser: browserName,
                 browserVersion: browserVersion,
                 modifiedSuiteName: false,
                 screenshotsOnlyOnFailure: true,
                 testPlatform: platform
             };
-            new HTMLReport().from('target/Test-Reports/jasmine-results/xmlresults.xml', testConfig);
+            new HTMLReport().from("target/Jasmine-Test-Results/screenshots/xmlresults.xml", testConfig);
         });
     }
 

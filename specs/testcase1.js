@@ -18,7 +18,7 @@ describe('Super Calculator Application Demo', function() {
         expect(browser.getTitle()).toEqual('Super Calculator');
     });
 
-    it('Add Two Numbers', function() {
+    it('Add Two Numbers - Positive', function() {
 
         addNumber(5, 5);
         homepage.verifyResult('10');
@@ -26,5 +26,12 @@ describe('Super Calculator Application Demo', function() {
         browser.sleep(2000);
     });
 
+    it('Add Two Numbers - Negative', function() {
+
+        addNumber(5, 5);
+        homepage.verifyResult('10');
+        homepage.verifyHistory(5); // Failure Scenario
+        browser.sleep(2000);
+    });
 
 });
