@@ -33,10 +33,8 @@
 	-conf  (configuration file)
 	-pages (Page objects)
 	-specs (test cases)
-		
 
 	
-
 ### Protractor Locators
 
 1. Angular Specific locators
